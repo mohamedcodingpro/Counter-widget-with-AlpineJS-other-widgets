@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Widget</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Include Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        .counter-widget {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-widget" x-data="{ count: 0 }">
+        <h1 class="text-xl font-semibold mb-4">Counter Widget</h1>
+        <div class="counter text-4xl font-bold mb-4 text-blue-600" x-text="count"></div>
+        <div class="space-x-4">
+            <button @click="count++" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">Increment</button>
+            <button @click="count--" class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 focus:outline-none">Decrement</button>
+        </div>
+    </div>
+</body>
+</html>
